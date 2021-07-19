@@ -1,0 +1,66 @@
+<div fxLayout="column" fxflex class="Fondo">
+    <div fxFlex="30" fxLayoutAlign="center center" fxLayout="column" >
+        <div class="titulo">
+            <h1 style="color: white"> Final Space</h1>
+        </div>
+        <div class="Buscador" >
+            <form class="example-form">
+                <mat-form-field class="example-full-width Fondo2" appearance="fill">
+                    <mat-label>Ingresa la Frase</mat-label>
+                    <input type="text" matInput [(ngModel)]="search" name="search" matInput
+                        placeholder="Busqueda Frases" [matAutocomplete]="auto">
+                    <mat-autocomplete #auto="matAutocomplete">
+                        <mat-option *ngFor="let item of citar | buscando:search" [value]="item.quote">
+                            {{item.quote}}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+            </form>
+        </div>
+    </div>
+    <!-- <div class="cuerpo" fxLayout="row wrap" fxFlex fxLayoutAlign="space-evenly center" fxFlex="40">
+      <div *ngFor="let item of citar | buscando:search">
+        <mat-card class="example-card bordesBlog" fxFlex="" fxLayout="column">
+          <img mat-card-image src="{{item.image}}" alt="Photo of a Shiba Inu" class="ubicacionIMG" fxFlex="60">
+          <mat-card-header fxFlex="25">
+            <mat-card-title>
+              <p>{{item.by}}</p>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              {{item.quote}}}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div> -->
+    <div fxFlex="70" fxLayoutAlign="center center" class="tablamargen">
+        <table fxflex mat-table [dataSource]="pelota | buscando:search" class="mat-elevation-z8 demo Fondo " >
+            <!-- Position Column -->
+            <ng-container matColumnDef="imagen">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element">
+                    <div>
+                        <img mat-card-image src="{{element.image}}">
+                    </div>
+                </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="nombre" >
+                <th mat-header-cell *matHeaderCellDef style="color: white"> Nombre </th>
+                <td mat-cell *matCellDef="let element" style="color: white"> {{element.by}} </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="frase">
+                <th mat-header-cell *matHeaderCellDef style="color: white"> Frase </th>
+                <td mat-cell *matCellDef="let element" style="color: white"> {{element.quote}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+</div>

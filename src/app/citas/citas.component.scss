@@ -1,0 +1,73 @@
+.bordesBlog{
+  margin:4%
+}
+
+mat-card {
+  height: 70vh;
+}
+.ubicacionIMG{
+  object-fit: cover;
+  object-position: top center;
+}
+.example-card {
+  max-width: 300px;
+}
+
+
+.example-full-width {
+  width: 100%;
+}
+
+.Buscador{
+  width: 50%;
+  margin: 2%;
+}
+
+.titulo{
+  margin: 2%;
+}
+
+.demo-table {
+  width: 90%;
+}
+
+.mat-column-imagen {
+  
+  padding-right: 24px;
+  text-align: center;
+}
+img{
+    margin: 2%;
+    height: 200px;
+    width: 200px;
+}
+.mat-column-nombre {
+  padding-left: 16px;
+  text-align: center;
+  width: 50%;
+  font-size: 20px;
+  
+}
+ 
+.mat-column-frase {
+  width: 50%;
+  text-align: center;
+  padding-left: 16px;
+  font-size: 20px;
+}
+
+.tablamargen{
+    margin: 1%;
+}
+
+.Fondo {
+  background-color:#181b1c;
+}
+
+.Fondo2  {
+  background-color: white;
+}
+.testclass {
+  float: right;
+}
+
